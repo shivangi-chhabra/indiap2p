@@ -20,6 +20,7 @@
 </template>
 <script>
 import axios from 'axios'
+
 export default {
     data:() =>{
     return{
@@ -29,7 +30,7 @@ export default {
     },
     methods: {
         add: function() {
-      
+          
           axios(
           { 
             method: "POST" ,
@@ -37,15 +38,17 @@ export default {
             data: {
             
                       Subscriber_Email:  this.Subscriber_Email
+                     
                       
             } 
                   
           }) 
           .then((result)=>{
-            
+          
           console.log(result.data);
           this.response = result.data;
         })
+         alert('Thank you! Your submission has been received!')
          this.Subscriber_Email = " "
         }
     }
